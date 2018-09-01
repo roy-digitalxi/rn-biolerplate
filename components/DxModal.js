@@ -11,14 +11,16 @@ const styles = {
   },
 };
 
-const DxModal = ({ modalOpen, closeModal, children }) => (
+const DxModal = ({
+ modalOpen, closeModal, children, transparent 
+}) => (
       <Modal
           animationType='slide'
           transparent={true}
           visible={modalOpen}
           onRequestClose={closeModal}
       >
-        <View style={styles.backDropStyle}>
+        <View style={[styles.backDropStyle, { backgroundColor: transparent ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,1)' }]}>
           {/* Cloning all the the child componenets and passing close modal as a prop */}
 
           {
@@ -33,6 +35,7 @@ DxModal.propTypes = {
   modalOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
   children: PropTypes.object.isRequired,
+  transparent: PropTypes.bool,
 };
 
 export default DxModal;

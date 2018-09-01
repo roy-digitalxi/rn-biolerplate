@@ -13,6 +13,7 @@ const styles = {
   container: {
     flex: 1,
     minHeight: 50,
+    height: '100%',
     width: '100%',
     paddingLeft: 12,
     paddingRight: 12,
@@ -30,6 +31,7 @@ const DxHtmlReader = ({ source }) => (
       scalesPageToFit = {
         Platform.OS !== 'ios'
       }
+      style={{ height: 300 }}
     />
   </View>
 );

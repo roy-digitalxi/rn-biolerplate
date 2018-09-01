@@ -221,9 +221,9 @@ class Header extends Component {
                                           <Icon style={userIconStyle}
                                               name="ios-contact"
                                           />
-                                          <Badge style={badgeStyle}>
+                                          {/* <Badge style={badgeStyle}>
                                               <Text style={badgeTextStyle}>2</Text>
-                                          </Badge>
+                                          </Badge> */}
                                       </Button>
                                   </View>
                             }

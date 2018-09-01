@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import actions from '../../actions';
 import modalActions from '../../../../actions/Modal';
 import homeActions from '../../../Home/actions';
+import ImageZoom from 'react-native-image-pan-zoom';
 
 // components
 import { DxContainer } from '../../../../styles/grid';
@@ -28,17 +29,14 @@ const styles = {
     backgroundColor: colors.bgColor,
   },
   webViewStyle: {
-    width: Dimensions.get('window').width * 0.8,
+    width: Dimensions.get('window').width,
     height: '100%',
   },
   webViewContainerStyle: {
-    flex: 1,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 50,
-    paddingBottom: 50,
-    paddingLeft: 30,
-    paddingRight: 30,
   },
   closeStyle: {
     alignSelf: 'flex-end',
@@ -47,14 +45,17 @@ const styles = {
     color: '#fff',
     fontSize: 16,
     marginBottom: 10,
+    paddingTop: 20,
+    paddingRight: 20,
   },
   popupImageStyle: {
-    width: Dimensions.get('window').width * .95 ,
+    width: Dimensions.get('window').width,
     resizeMode: 'contain',
     height: '100%',
   },
   videoStyle: {
-    width: Dimensions.get('window').width * .95,
+    width: Dimensions.get('window').width,
+    height: '100%'
   }
 };
 
@@ -187,17 +188,25 @@ class FeedListPage extends Component {
   renderPopupForCards = (data) => {
     
     return <DxModal
-        canClose={true}
+        transparent={false}
         modalOpen={this.props.modal.modalOpen}
         closeModal={ () => this.props.closeModal()}>
         <View style={styles.webViewContainerStyle}>
               <TouchableOpacity style={styles.closeStyle} onPress={() => this.props.closeModal()}><Text style={styles.closeButtonStyle}>Close  X</Text></TouchableOpacity>
               {
                 data.type === 'IMAGE' ? 
-                  <Image
-                    source={{ uri: `${imageBaseLink}${data.link}` }}
-                    style={styles.popupImageStyle}
-                  /> : data.type === 'VIDEO' ? 
+                  <ImageZoom cropWidth={Dimensions.get('window').width}
+                       cropHeight={Dimensions.get('window').height}
+                       imageWidth = {
+                         Dimensions.get('window').width
+                       }
+                       imageHeight={Dimensions.get('window').height}>
+                    <Image
+                      source={{ uri: `${imageBaseLink}${data.link}` }}
+                      style={styles.popupImageStyle}
+                    />
+                  </ImageZoom>
+                  : data.type === 'VIDEO' ? 
                   <View style={{ height: 350 }}>
                     <WebView
                       source={{ uri: `${data.link}` }}

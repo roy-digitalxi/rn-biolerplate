@@ -77,7 +77,7 @@ class SideBar extends Component {
             </Left>
           </ListItem>
 
-          <ListItem
+          {/* <ListItem
             Icon
             button
             noBorder
@@ -86,9 +86,9 @@ class SideBar extends Component {
               <Image style={{ width: 20, height: 20, marginRight: 8 }} source={require('../assets/images/Icons/bell.png')} />
               <Text style={styles.drawerItemName}>Notifications</Text>
             </Left>
-          </ListItem>
+          </ListItem> */}
 
-          <ListItem
+          {/* <ListItem
             Icon
             button
             noBorder
@@ -104,9 +104,9 @@ class SideBar extends Component {
                 </Badge>
               </Right>
 
-          </ListItem>
+          </ListItem> */}
 
-          <ListItem
+          {/* <ListItem
             Icon
             button
             noBorder
@@ -115,9 +115,9 @@ class SideBar extends Component {
               <Icon style={styles.drawerItemIcon} name="hammer" />
               <Text style={styles.drawerItemName}>Preferences</Text>
             </Left>
-          </ListItem>
+          </ListItem> */}
 
-          <ListItem
+          {/* <ListItem
             Icon
             button
             noBorder
@@ -126,7 +126,7 @@ class SideBar extends Component {
               <Icon style={styles.drawerItemIcon} name="settings" />
               <Text style={styles.drawerItemName}>Settings</Text>
             </Left>
-          </ListItem>
+          </ListItem> */}
 
           <ListItem
             Icon
