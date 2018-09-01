@@ -137,6 +137,10 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-fs')
+    compile project(':react-native-fetch-blob')
+    compile project(':react-native-device-info')
     compile project(':react-native-pdf')
     compile project(':rn-fetch-blob')
     compile fileTree(dir: "libs", include: ["*.jar"])
