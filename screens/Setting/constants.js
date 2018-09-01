@@ -1,0 +1,7 @@
+export default {
+
+  DX_PREFERENCE: 'DX_PREFERENCE',
+  DX_PRIVACY: 'DX_PRIVACY',
+  DX_HELP: 'DX_HELP',
+};
+
